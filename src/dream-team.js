@@ -15,7 +15,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function createDreamTeam(members) {
   let res = '';
-  if (members.length && Array.isArray(members)) {
+  if (arguments.length && Array.isArray(members)) {
     for (let i = 0; i < members.length; i++) {
       if (typeof (members[i]) === 'string') {
         for (let j = 0; j < members[i].length; j++) {
@@ -29,7 +29,7 @@ function createDreamTeam(members) {
   } else {
     return false
   }
-  return res.split('').sort().join('').toUpperCase();
+  return res.toUpperCase().split('').sort().join('');
 }
 
 module.exports = {
